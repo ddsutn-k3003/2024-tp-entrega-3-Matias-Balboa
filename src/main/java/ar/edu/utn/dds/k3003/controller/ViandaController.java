@@ -37,7 +37,7 @@ public class ViandaController {
     public void buscarPorColaboradorIdAnioMes(Context context) {
         var colaboradorId = context.pathParamAsClass("colaboradorId", Long.class).get();
         var anio = context.pathParamAsClass("anio", Integer.class).get();
-        var mes = context.pathParamAsClass("mes", Integer.class).get();
+        var mes = context.pathParamAsClass("mes", Integer.class).get(); 
         try{
             var viandaDTO = this.fachada.viandasDeColaborador(colaboradorId,mes,anio);
             context.json(viandaDTO);

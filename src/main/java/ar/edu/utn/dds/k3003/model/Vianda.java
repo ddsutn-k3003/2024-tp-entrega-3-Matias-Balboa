@@ -6,18 +6,28 @@ import lombok.Setter;
 
 import ar.edu.utn.dds.k3003.facades.dtos.EstadoViandaEnum;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @AllArgsConstructor
 public class Vianda {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "vianda_qr")
     private String qr;
+    @Column(name = "vianda_colaborador_id")
     private Long colaboradorId;
+    @Column(name = "vianda_heladera_id")
     private Integer heladeraId;
+    @Column(name = "vianda_estado")
     private EstadoViandaEnum estado;
+    @Column(name = "vianda_fecha_elavoracion")
     private LocalDateTime fechaElavoracion;
 
     public Vianda(Long id,String qr,Long colaboradorId,Integer heladeraId,EstadoViandaEnum estado){
