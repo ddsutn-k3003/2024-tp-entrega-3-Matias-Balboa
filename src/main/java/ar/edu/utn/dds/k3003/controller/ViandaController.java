@@ -38,13 +38,9 @@ public class ViandaController {
         var colaboradorId = context.pathParamAsClass("colaboradorId", Long.class).get();
         var anio = context.pathParamAsClass("anio", Integer.class).get();
         var mes = context.pathParamAsClass("mes", Integer.class).get(); 
-        try{
-            var viandaDTO = this.fachada.viandasDeColaborador(colaboradorId,mes,anio);
-            context.json(viandaDTO);
-        }catch(NoSuchElementException ex){
-            context.result(ex.getLocalizedMessage());
-            context.status(HttpStatus.NOT_FOUND);
-        }
+        var viandaDTO = this.fachada.viandasDeColaborador(colaboradorId,mes,anio);
+        context.json(viandaDTO);
+
     }
 
     public void estaVencida(Context context) {

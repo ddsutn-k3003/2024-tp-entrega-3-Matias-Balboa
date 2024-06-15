@@ -6,15 +6,14 @@ import lombok.Setter;
 
 import ar.edu.utn.dds.k3003.facades.dtos.EstadoViandaEnum;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@Entity
+@Table(name = "viandas")
 public class Vianda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +25,7 @@ public class Vianda {
     @Column(name = "vianda_heladera_id")
     private Integer heladeraId;
     @Column(name = "vianda_estado")
+    @Enumerated(EnumType.STRING)
     private EstadoViandaEnum estado;
     @Column(name = "vianda_fecha_elavoracion")
     private LocalDateTime fechaElavoracion;
@@ -43,4 +43,6 @@ public class Vianda {
     public Boolean esValida(Integer mes, Integer anio){
         return (this.fechaElavoracion.getYear() == anio && this.fechaElavoracion.getMonthValue() == mes);
     }
+
+
 }

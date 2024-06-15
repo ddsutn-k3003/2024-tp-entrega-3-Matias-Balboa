@@ -13,8 +13,9 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd" version="2.2">
             <property name="javax.persistence.jdbc.password" value="puerto 5432" />
             -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgres://dpg-cpmapc88fa8c73afs32g-a.oregon-postgres.render.com/entrega3_tp_dds_ihz6"/>
-            <property name="hibernate.dialect" value = "org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://dpg-cpmapc88fa8c73afs32g-a.oregon-postgres.render.com/entrega3_tp_dds_ihz6"/>
+
             <property name="javax.persistence.jdbc.user" value="entrega3_tp_dds"/>
             <property name="javax.persistence.jdbc.password" value="KGc6F4hUes4JPZYXt5sowIw9ITW8Nb4n" />
 

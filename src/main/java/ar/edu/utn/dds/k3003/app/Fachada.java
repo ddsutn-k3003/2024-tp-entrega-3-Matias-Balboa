@@ -47,9 +47,9 @@ public class Fachada implements ar.edu.utn.dds.k3003.facades.FachadaViandas {
     public List<ViandaDTO> viandasDeColaborador(Long aLong, Integer integer, Integer integer1) throws NoSuchElementException {
 
         //Recibo la lista de Viandas
-        List<Vianda> viandas = this.viandaRepository.findByColaborador(aLong);
+        List<Vianda> viandas = this.viandaRepository.findByColaborador(aLong,integer,integer1);
         //Filtro por las fechas
-        viandas = viandas.stream().filter(x -> x.esValida(integer,integer1)).toList();
+       // viandas = viandas.stream().filter(x -> x.esValida(integer,integer1)).toList();
         //Mapeo para obtener la lista de DTOS
         List<ViandaDTO> viandaDTOS = viandas.stream().map(x -> viandaMapper.map(x)).toList();
 
