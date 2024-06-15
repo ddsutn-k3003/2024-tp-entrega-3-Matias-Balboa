@@ -56,8 +56,8 @@ public class ViandaController {
     }
 
     public void modificarHeladeraVianda(Context context) {
-        var qr = context.pathParamAsClass("qrVianda", String.class).get();
-        var heladeraDestino = context.pathParamAsClass("heladeraDestino", Integer.class).get();
+        var qr = context.queryParamAsClass("qrVianda", String.class).get();
+        var heladeraDestino = context.queryParamAsClass("heladeraDestino", Integer.class).get();
         try {
             fachada.modificarHeladera(qr,heladeraDestino);
 
