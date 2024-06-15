@@ -11,7 +11,7 @@ public class ViandaMapper {
     public ViandaDTO map(Vianda vianda){
     //Seteo el DTO de vianda
         ViandaDTO viandaDTO = new ViandaDTO(vianda.getQr(),
-                                            vianda.getFechaElavoracion(),
+                                            vianda.getFechaElaboracion(),
                                             vianda.getEstado(),
                                             vianda.getColaboradorId(),
                                             vianda.getHeladeraId()

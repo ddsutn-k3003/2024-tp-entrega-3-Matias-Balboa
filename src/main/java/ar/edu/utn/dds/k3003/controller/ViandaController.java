@@ -2,7 +2,9 @@ package ar.edu.utn.dds.k3003.controller;
 
 import ar.edu.utn.dds.k3003.app.Fachada;
 
+import ar.edu.utn.dds.k3003.facades.dtos.HeladeraDTO;
 import ar.edu.utn.dds.k3003.facades.dtos.ViandaDTO;
+import ar.edu.utn.dds.k3003.model.auxDto;
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 
@@ -57,9 +59,9 @@ public class ViandaController {
 
     public void modificarHeladeraVianda(Context context) {
         var qr = context.pathParamAsClass("qrVianda", String.class).get();
-        var heladeraDestino = context.queryParamAsClass("heladeraId", Integer.class).get();
+        var heladeraDestino = context.bodyAsClass(auxDto.class);
         try {
-            fachada.modificarHeladera(qr,heladeraDestino);
+            fachada.modificarHeladera(qr,heladeraDestino.getHeladeraId());
 
         }catch(NoSuchElementException ex){
             context.result(ex.getLocalizedMessage());

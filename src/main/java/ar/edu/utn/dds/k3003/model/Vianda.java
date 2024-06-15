@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @Entity
-@Table(name = "viandas")
+@Table(name = "viandasv1")
 public class Vianda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,8 +28,8 @@ public class Vianda {
     @Column(name = "vianda_estado")
     @Enumerated(EnumType.STRING)
     private EstadoViandaEnum estado;
-    @Column(name = "vianda_fecha_elavoracion")
-    private LocalDateTime fechaElavoracion;
+    @Column(name = "vianda_fecha_elaboracion")
+    private LocalDateTime fechaElaboracion;
 
     public Vianda(Long id,String qr,Long colaboradorId,Integer heladeraId,EstadoViandaEnum estado){
         this.id = id;
@@ -37,7 +37,7 @@ public class Vianda {
         this.colaboradorId = colaboradorId;
         this.heladeraId = heladeraId;
         this.estado = estado;
-        this.fechaElavoracion = LocalDateTime.now();
+        this.fechaElaboracion = LocalDateTime.now();
     }
 
     public Vianda(String qr,Long colaboradorId,Integer heladeraId,EstadoViandaEnum estado){
@@ -45,17 +45,17 @@ public class Vianda {
         this.colaboradorId = colaboradorId;
         this.heladeraId = heladeraId;
         this.estado = estado;
-        this.fechaElavoracion = LocalDateTime.now();
+        this.fechaElaboracion = LocalDateTime.now();
     }
-    public Vianda(String qr,Long colaboradorId,Integer heladeraId,EstadoViandaEnum estado,LocalDateTime fechaElavoracion){
+    public Vianda(String qr,Long colaboradorId,Integer heladeraId,EstadoViandaEnum estado,LocalDateTime fechaElaboracion){
         this.qr = qr;
         this.colaboradorId = colaboradorId;
         this.heladeraId = heladeraId;
         this.estado = estado;
-        this.fechaElavoracion = fechaElavoracion;
+        this.fechaElaboracion = fechaElaboracion;
     }
     public Boolean esValida(Integer mes, Integer anio){
-        return (this.fechaElavoracion.getYear() == anio && this.fechaElavoracion.getMonthValue() == mes);
+        return (this.fechaElaboracion.getYear() == anio && this.fechaElaboracion.getMonthValue() == mes);
     }
 
 
