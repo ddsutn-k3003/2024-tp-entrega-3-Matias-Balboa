@@ -20,6 +20,7 @@ public class Vianda {
     private Long id;
     @Column(name = "vianda_qr")
     private String qr;
+    
     @Column(name = "vianda_colaborador_id")
     private Long colaboradorId;
     @Column(name = "vianda_heladera_id")
