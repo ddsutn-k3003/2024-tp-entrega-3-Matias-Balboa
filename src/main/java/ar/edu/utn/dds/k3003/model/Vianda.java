@@ -47,6 +47,13 @@ public class Vianda {
         this.estado = estado;
         this.fechaElavoracion = LocalDateTime.now();
     }
+    public Vianda(String qr,Long colaboradorId,Integer heladeraId,EstadoViandaEnum estado,LocalDateTime fechaElavoracion){
+        this.qr = qr;
+        this.colaboradorId = colaboradorId;
+        this.heladeraId = heladeraId;
+        this.estado = estado;
+        this.fechaElavoracion = fechaElavoracion;
+    }
     public Boolean esValida(Integer mes, Integer anio){
         return (this.fechaElavoracion.getYear() == anio && this.fechaElavoracion.getMonthValue() == mes);
     }
